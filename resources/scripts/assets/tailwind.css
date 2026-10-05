@@ -4,40 +4,40 @@
 @plugin "tailwind-scrollbar";
 
 @theme {
-    --color-ring: deepskyblue;
+    --color-ring: var(--color-brand-400);
 
-    --color-brand-50: oklch(0.97 0.0143 57.59);
-    --color-brand-100: oklch(0.9354 0.0323 58.39);
-    --color-brand-200: oklch(0.8798 0.063 58.24);
-    --color-brand-300: oklch(0.818 0.0981 55.75);
-    --color-brand-400: oklch(0.7603 0.1318 54.85);
-    --color-brand-500: oklch(0.7123 0.1602 52.23);
-    --color-brand-600: oklch(0.6276 0.1636 48.48);
-    --color-brand-700: oklch(0.5108 0.1316 48.74);
-    --color-brand-800: oklch(0.3887 0.0962 49.79);
-    --color-brand-900: oklch(0.2451 0.0546 53.64);
+    --color-brand-50: oklch(0.97 0.01 300);
+    --color-brand-100: oklch(0.9354 0.0226 300);
+    --color-brand-200: oklch(0.8798 0.0441 300);
+    --color-brand-300: oklch(0.818 0.0687 300);
+    --color-brand-400: oklch(0.7603 0.0923 300);
+    --color-brand-500: oklch(0.7123 0.1121 300);
+    --color-brand-600: oklch(0.6276 0.1145 300);
+    --color-brand-700: oklch(0.5108 0.0921 300);
+    --color-brand-800: oklch(0.3887 0.0673 300);
+    --color-brand-900: oklch(0.2451 0.0382 300);
 
-    --color-cream-100: #fffdfa;
-    --color-cream-200: #fff8f0;
-    --color-cream-300: #fff5eb;
-    --color-cream-400: #fff1e0;
-    --color-cream-500: #ffedd9;
+    --color-cream-100: #fefdff;
+    --color-cream-200: #faf7ff;
+    --color-cream-300: #f8f5ff;
+    --color-cream-400: #f6f0ff;
+    --color-cream-500: #f3ecff;
 
-    --color-mocha-50: #867565;
-    --color-mocha-100: #78695a;
-    --color-mocha-200: #5d5246;
-    --color-mocha-300: #433b32;
-    --color-mocha-400: #29241f;
-    --color-mocha-500: #1d1816;
-    --color-mocha-600: #14110f;
-    --color-mocha-700: #0c0a09;
+    --color-mocha-50: #7b7589;
+    --color-mocha-100: #6e687b;
+    --color-mocha-200: #565160;
+    --color-mocha-300: #3e3a45;
+    --color-mocha-400: #26242a;
+    --color-mocha-500: #1a181d;
+    --color-mocha-600: #121114;
+    --color-mocha-700: #0b0a0c;
 
-    --color-bg: #0c0a09;
-    --color-bg-raised: #110f0d;
-    --color-bg-lowered: #0c0a09;
+    --color-bg: #0b0a0c;
+    --color-bg-raised: #100f11;
+    --color-bg-lowered: #0b0a0c;
 
     --color-primary: var(--color-cream-400);
-    --color-secondary: #fff6eb9c;
+    --color-secondary: #f9f5ff9c;
 
     --color-inherit: inherit;
     --color-current: currentColor;
@@ -45,8 +45,8 @@
     --color-black: #000000;
     --color-white: #fff;
 
-    --color-brand-grad: radial-gradient(109.26% 109.26% at 49.83% 13.37%, #ff343c 0%, #f06f53 100%);
-    --color-brand: #fa4e49;
+    --color-brand-grad: radial-gradient(109.26% 109.26% at 49.83% 13.37%, #b998ea 0%, #a091dd 100%);
+    --color-brand: #b094e2;
 
     --color-accent: var(--color-cream-400);
     --color-accent-foreground: var(--color-mocha-500);

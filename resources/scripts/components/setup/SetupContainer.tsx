@@ -159,10 +159,10 @@ const SuccessPanel = ({ email }: { email: string }) => (
             aria-label='Success checkmark'
             role='img'
         >
-            <circle cx='22' cy='22' r='21' stroke='#fa4e49' strokeWidth='2' opacity='0.35' />
+            <circle cx='22' cy='22' r='21' stroke='#b094e2' strokeWidth='2' opacity='0.35' />
             <motion.path
                 d='M14 22.5L19.5 28L31 16'
-                stroke='#fa4e49'
+                stroke='#b094e2'
                 strokeWidth='2.5'
                 strokeLinecap='round'
                 strokeLinejoin='round'

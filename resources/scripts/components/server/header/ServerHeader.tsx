@@ -17,7 +17,7 @@ const ServerHeader = (props: headerProps) => {
     const buttonsSection = useMemo(
         () => (
             <PowerButtons
-                className={`hidden lg:flex gap-2 items-center justify-center ${props.powerButtons ? '' : 'lg:hidden'}`}
+                className={`hidden lg:flex gap-2 items-center justify-center ${props.powerButtons === false ? 'lg:hidden' : ''}`}
             />
         ),
         [props.powerButtons],

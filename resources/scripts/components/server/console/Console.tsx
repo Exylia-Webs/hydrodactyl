@@ -20,7 +20,7 @@ import { ServerContext } from '@/state/server';
 
 const theme = {
     // background: 'rgba(0, 0, 0, 0)',
-    background: '#110f0d',
+    background: '#100f11',
     cursor: 'transparent',
     black: '#000000',
     red: '#E54B4B',
