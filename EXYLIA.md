@@ -13,4 +13,5 @@ Keep each change small and isolated (a few files) so rebases stay painless.
 - Favicon: when a branding logo is set, it replaces the default favicons (panel and admin layouts).
 - Lavender theme: `resources/scripts/assets/tailwind.css` re-hues the warm palette to OKLCH hue ~300, keeping lightness
   (contrast). Surfaces get boosted chroma (dark 0.022-0.07, light 0.03-0.055) so the tint is visible; brand chroma 70%.
+- Tailwind `neutral`/`zinc`/`gray` scales are redefined with a lavender tint, because many components use them directly.
 - Server power buttons (Start/Restart/Stop) show in the header on every server page, not only Console.
