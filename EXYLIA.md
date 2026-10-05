@@ -1,7 +1,9 @@
 # Exylia flavour of Hydrodactyl
 
-The `exylia` branch is an upstream release tag plus a small set of Exylia commits. CI publishes
-`ghcr.io/exylia-panel-plugins/hydrodactyl:exylia`, and production (LXC 106, `/opt/hydrodactyl`) runs that tag.
+The `exylia` branch is an upstream release tag plus a small set of Exylia commits. Production runs on Coolify
+(project Internals, app `hydrodactyl`): every push to `exylia` is built on the builder (CT 107) and deployed to
+https://panel.exylia.net. DB and Redis are Coolify resources (`hydrodactyl-db`, `hydrodactyl-redis`). The Elytra daemon
+stays on LXC 106 (panel-node-cl-1.exylia.net).
 
 ## Changes vs upstream
 - `SFTP_HOST`: the hostname shown in a server's SFTP tab (`config/pterodactyl.php` → `ServerTransformer`).
