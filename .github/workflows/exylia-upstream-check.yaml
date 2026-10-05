@@ -36,7 +36,7 @@ jobs:
 
           Para actualizar:
           1. \`git fetch upstream --tags && git rebase --onto $latest $current exylia\` y resolver conflictos.
-          2. \`git push --force-with-lease\`: el workflow *Exylia - Build image* publica \`:exylia\`.
-          3. Respaldar la base de datos del panel y, en LXC 106: \`docker compose -f /opt/hydrodactyl/docker-compose.yml pull && docker compose -f /opt/hydrodactyl/docker-compose.yml up -d\`.
+          2. Respaldar la base de datos \`hydrodactyl-db\` en Coolify.
+          3. \`git push --force-with-lease\`: Coolify construye y despliega (las migraciones corren al arrancar).
           BODY
           )"
