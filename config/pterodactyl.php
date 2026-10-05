@@ -15,6 +15,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | SFTP Host
+    |--------------------------------------------------------------------------
+    |
+    | Hostname shown to users for SFTP connections. Leave empty to show the
+    | node FQDN. Useful when the node FQDN sits behind an HTTP-only proxy
+    | (e.g. Cloudflare) and SFTP is reachable through a different hostname.
+    */
+
+    'sftp_host' => env('SFTP_HOST'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Service Author
     |--------------------------------------------------------------------------
     |
