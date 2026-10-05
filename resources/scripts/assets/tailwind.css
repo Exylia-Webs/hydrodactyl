@@ -17,27 +17,27 @@
     --color-brand-800: oklch(0.3887 0.0673 300);
     --color-brand-900: oklch(0.2451 0.0382 300);
 
-    --color-cream-100: #fefdff;
-    --color-cream-200: #faf7ff;
-    --color-cream-300: #f8f5ff;
-    --color-cream-400: #f6f0ff;
-    --color-cream-500: #f3ecff;
+    --color-cream-100: #fffaff;
+    --color-cream-200: #fbf5ff;
+    --color-cream-300: #f9f2ff;
+    --color-cream-400: #f7ecff;
+    --color-cream-500: #f4e9ff;
 
-    --color-mocha-50: #7b7589;
-    --color-mocha-100: #6e687b;
-    --color-mocha-200: #565160;
-    --color-mocha-300: #3e3a45;
-    --color-mocha-400: #26242a;
-    --color-mocha-500: #1a181d;
-    --color-mocha-600: #121114;
-    --color-mocha-700: #0b0a0c;
+    --color-mocha-50: #7d709d;
+    --color-mocha-100: #716390;
+    --color-mocha-200: #584d72;
+    --color-mocha-300: #403753;
+    --color-mocha-400: #272232;
+    --color-mocha-500: #1a1723;
+    --color-mocha-600: #13101a;
+    --color-mocha-700: #0c0813;
 
-    --color-bg: #0b0a0c;
-    --color-bg-raised: #100f11;
-    --color-bg-lowered: #0b0a0c;
+    --color-bg: #0c0813;
+    --color-bg-raised: #110d18;
+    --color-bg-lowered: #0c0813;
 
     --color-primary: var(--color-cream-400);
-    --color-secondary: #f9f5ff9c;
+    --color-secondary: #faf3ff9c;
 
     --color-inherit: inherit;
     --color-current: currentColor;
