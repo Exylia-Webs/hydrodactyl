@@ -45,7 +45,20 @@ RUN apk add --no-cache \
     tar unzip certbot certbot-nginx mysql-client postgresql18-client \
     && ln -s /bin/ash /bin/bash
 
-# Copy frontend build
+# Composer packages first, from the manifests only: this layer is reused until composer.lock
+# changes instead of downloading every package on each build. Scripts and the autoloader need
+# the application code, so they run once it is copied.
+RUN curl -sS https://getcomposer.org/installer \
+    | php -- --install-dir=/usr/local/bin --filename=composer
+COPY composer.json composer.lock ./
+RUN --mount=type=cache,target=/root/.composer/cache \
+    if [ "$DEV" = "false" ]; then \
+    composer install --no-dev --no-scripts --no-autoloader --prefer-dist; \
+    else \
+    composer install --no-scripts --no-autoloader; \
+    fi
+
+# Copy the application and the frontend build
 COPY . ./
 RUN if [ "$DEV" = "false" ]; then \
     echo "Copying frontend build"; \
@@ -55,14 +68,11 @@ RUN if [ "$DEV" = "false" ]; then \
 COPY --from=frontend /app/public/assets public/assets
 COPY --from=frontend /app/public/build public/build
 
-# Fetch & install Composer packages
-COPY composer.json composer.lock ./
-RUN curl -sS https://getcomposer.org/installer \
-    | php -- --install-dir=/usr/local/bin --filename=composer \
-    && if [ "$DEV" = "false" ]; then \
-    composer install --no-dev --optimize-autoloader; \
+# Autoloader and package scripts, now that the code is in place
+RUN if [ "$DEV" = "false" ]; then \
+    composer dump-autoload --no-dev --optimize; \
     else \
-    composer install; \
+    composer dump-autoload; \
     fi
 
 # Clean up image for dev environment
@@ -103,5 +113,11 @@ RUN rm -rf bootstrap/cache/*.php \
     && rm -rf storage/framework/* || true
 
 EXPOSE 80 443
+
+# Coolify reads this for its rolling updates: it waits the start period, then one interval between
+# probes. The entrypoint waits for the database and migrates before nginx answers, hence the
+# retries. Anything below 500 means the panel answers (/ redirects to the login).
+HEALTHCHECK --interval=10s --timeout=5s --start-period=5s --retries=18 \
+    CMD sh -c 'c=$(curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1/); [ "$c" -ge 200 ] && [ "$c" -lt 500 ]'
 ENTRYPOINT [ "/bin/ash", ".github/docker/entrypoint.sh" ]
 CMD [ "supervisord", "-n", "-c", "/etc/supervisord.conf" ]
